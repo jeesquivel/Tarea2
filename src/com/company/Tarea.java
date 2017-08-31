@@ -4,6 +4,25 @@ public class Tarea {
 
 
     /**
+     * Calcula el MCD por medio del algortmo de Euclides
+     * @param a  extremo inferior de un intervalo euclideo
+     * @param b  extremo superior de un intervalo euclideo
+     */
+    public   void Euclides(int a, int b){
+        int r=a%b;
+        while (r!=0){
+            a=b;
+            b=r;
+            r=a%b;
+        }
+        System.out.print("Máximo común divisor es: "+ b);
+    }
+
+
+
+
+
+    /**
      *  Funcion para calcular el cero por medio de la bisección
      * @param x argumento de la funcion
      * @return la imagen de x
@@ -34,9 +53,9 @@ public class Tarea {
                 }
                 iteraciones++;
             }while (errorAbs>tol);
-            System.out.print("Aproximación: "+x+ "| Cantidad de iteraciones: "+ iteraciones);
+            System.out.println("Aproximación: "+x+ " | Cantidad de iteraciones: "+ iteraciones);
         }
-        else System.out.print("No se garantiza la existencia de soluciones :(");
+        else System.out.println("No se garantiza la existencia de soluciones :(");
     }
 
 
@@ -45,7 +64,9 @@ public class Tarea {
 
         Tarea tarea= new Tarea();
 
-        tarea.biseccion(-2,0,0.00001);
+        tarea.biseccion(-2,0,0.001);
+
+        tarea.Euclides(2366,273);
 
     }
 }
